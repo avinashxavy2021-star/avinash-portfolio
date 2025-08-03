@@ -1,0 +1,362 @@
+/* Base styling for the portfolio website */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: #f7f7f7;
+  scroll-behavior: smooth;
+}
+
+/* Container utility */
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+/* Navigation bar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(6px);
+  z-index: 10;
+}
+
+.navbar .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #ffd57e;
+}
+
+/* Hero section */
+.hero {
+  position: relative;
+  height: 100vh;
+  /* Updated hero image to swirling molten pattern */
+  background-image: url('assets/exp_metallurgist.png');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  color: #fff;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Dark overlay on hero image to improve text contrast; slightly lighter to reveal the lab image */
+  /* Slightly lighter overlay to reveal the hero background */
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: left;
+  padding-top: 80px;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+}
+
+.hero .tagline {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  max-width: 500px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.6rem;
+  background: #e28743;
+  color: #fff;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #cf6a1c;
+}
+
+/* Section styling */
+.section {
+  padding: 5rem 0 4rem;
+  background: #f7f7f7;
+  /* Provide space above sections when navigated via anchor links so headings are not hidden under the fixed navbar */
+  scroll-margin-top: 100px;
+}
+
+.section.alt {
+  background: #fff;
+}
+
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+  text-align: center;
+  position: relative;
+}
+
+.section h2::after {
+  content: '';
+  width: 60px;
+  height: 3px;
+  background: #e28743;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -10px;
+}
+
+/* Job blocks */
+.job {
+  margin-bottom: 2rem;
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.job h3 {
+  font-size: 1.4rem;
+  color: #2b2b2b;
+  margin-bottom: 0.3rem;
+}
+
+.job .duration {
+  font-size: 0.9rem;
+  color: #666;
+  display: block;
+  margin-bottom: 0.8rem;
+}
+
+.job ul {
+  padding-left: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.job ul li {
+  margin-bottom: 0.5rem;
+  list-style-type: disc;
+  line-height: 1.4;
+}
+
+/* Added image styling for each job card */
+.job-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* Image container for experience section */
+.image-container {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.image-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Project images */
+.project-image {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  margin-bottom: 0.8rem;
+}
+
+/* Publications section styling */
+.publication {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  margin-bottom: 2.5rem;
+  gap: 1.5rem;
+}
+.publication img {
+  flex: 0 0 260px;
+  width: 260px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.publication h4 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: #2b2b2b;
+}
+.publication p {
+  margin-bottom: 0.6rem;
+  line-height: 1.5;
+}
+.publication a {
+  color: #e28743;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+.publication a:hover {
+  color: #cf6a1c;
+}
+
+/* Skills grid */
+.skills-grid {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.skills-grid ul {
+  flex: 1;
+  min-width: 240px;
+  list-style-type: circle;
+  padding-left: 1.2rem;
+}
+
+.skills-grid li {
+  margin-bottom: 0.6rem;
+}
+
+/* Projects grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.project {
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease;
+}
+
+.project:hover {
+  transform: translateY(-6px);
+}
+
+.project h4 {
+  font-size: 1.2rem;
+  margin-bottom: 0.6rem;
+}
+
+.project p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Education section */
+.edu-details {
+  font-size: 0.95rem;
+  color: #555;
+  margin-top: 0.2rem;
+}
+
+/* Footer */
+.footer {
+  background: #333;
+  color: #fff;
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.footer h2 {
+  color: #fff;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.footer h2::after {
+  background: #ffd57e;
+}
+
+.contact-item {
+  margin-bottom: 0.4rem;
+  font-size: 0.95rem;
+}
+
+.contact-item a {
+  color: #ffd57e;
+  text-decoration: none;
+}
+
+.contact-item a:hover {
+  text-decoration: underline;
+}
+
+/* Reveal animation */
+/* Reveal animation: elements slide up into place. Visibility is always on, but translate Y animates when the active class is toggled. */
+.reveal {
+  opacity: 1;
+  transform: translateY(40px);
+  transition: transform 0.8s ease-out;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+  .nav-links {
+    display: none;
+  }
+  /* Mobile nav could be added here (optional) */
+}
